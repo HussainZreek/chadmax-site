@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHADMAX AI | Reveal Your Potential</title>
+    <meta name="description"
+        content="CHADMAX AI: The ultimate AI Facial Analysis tool to help you unlock your maximum potential. High-performance lookmaxxing insights driven by GPT-4o-mini Vision.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-purple: #A5008C;
+            --pure-black: #000000;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--pure-black);
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        .text-neon {
+            color: var(--neon-purple);
+            text-shadow: 0 0 10px rgba(165, 0, 140, 0.5), 0 0 20px rgba(165, 0, 140, 0.3);
+        }
+
+        .bg-neon {
+            background-color: var(--neon-purple);
+            box-shadow: 0 0 20px rgba(165, 0, 140, 0.6);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-purple {
+            background: rgba(165, 0, 140, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(165, 0, 140, 0.2);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at center, rgba(165, 0, 140, 0.15) 0%, transparent 70%);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+
+        @keyframes pulse-neon {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .animate-pulse-neon {
+            animation: pulse-neon 2s infinite ease-in-out;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#A5008C',
+                        dark: '#000000',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="selection:bg-neon selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass scroll-py-4">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-black tracking-tighter italic">
+                CHAD<span class="text-neon">MAX</span> AI
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest">
+                <a href="#home" class="hover:text-neon transition">Home</a>
+                <a href="#features" class="hover:text-neon transition">Features</a>
+                <a href="#privacy" class="hover:text-neon transition">Privacy</a>
+                <a href="#terms" class="hover:text-neon transition">Terms</a>
+            </div>
+            <div class="md:hidden">
+                <!-- Mobile Menu Button (Icon) -->
+                <button id="mobile-menu-btn" class="text-white focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden glass-purple flex flex-col items-center space-y-4 py-8 uppercase text-sm font-bold tracking-widest">
+            <a href="#home" class="hover:text-neon transition">Home</a>
+            <a href="#features" class="hover:text-neon transition">Features</a>
+            <a href="#privacy" class="hover:text-neon transition">Privacy</a>
+            <a href="#terms" class="hover:text-neon transition">Terms</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home"
+        class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden hero-gradient">
+        <!-- Floating Glow Elements -->
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-neon opacity-20 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-neon opacity-20 blur-[120px] rounded-full"></div>
+
+        <div class="container mx-auto px-6 text-center z-10">
+            <div
+                class="inline-block glass px-4 py-1 rounded-full text-xs font-black tracking-[0.2em] uppercase mb-8 border-neon/30 animate-pulse-neon">
+                Powered by GPT-4o-mini Vision
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black italic tracking-tighter mb-6 leading-tight">
+                REVEAL YOUR <br> <span class="text-neon">POTENTIAL</span>
+            </h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl font-medium mb-12">
+                The world's most advanced AI facial analysis tool. Get data-driven insights into your facial structure,
+                symmetry, and aesthetic potential in seconds.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                <a href="#"
+                    class="bg-neon text-white px-8 py-4 rounded-xl font-black uppercase tracking-widest hover:scale-105 transition shadow-2xl shadow-neon/40 flex items-center gap-3">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M17.5,12.5a.5.5,0,0,0,0-1H11.5v-6a.5.5,0,0,0-1,0v6H4.5a.5.5,0,0,0,0,1H10.5v6a.5.5,0,0,0,1,0v-6Z" />
+                        <path
+                            d="M18.71,19.5H5.29A3.29,3.29,0,0,1,2,16.21V2.79A3.29,3.29,0,0,1,5.29-0.5H18.71A3.29,3.29,0,0,1,22,2.79V16.21A3.29,3.29,0,0,1,18.71,19.5ZM5.29,0.5a2.29,2.29,0,0,0-2.29,2.29V16.21a2.29,2.29,0,0,0,2.29,2.29H18.71a2.29,2.29,0,0,0,2.29-2.29V2.79a2.29,2.29,0,0,0-2.29-2.29Z" />
+                    </svg>
+                    Coming Soon to App Store
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-black relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black italic tracking-tighter uppercase mb-4">Elite <span
+                        class="text-neon">Analysis</span></h2>
+                <div class="w-20 h-1 bg-neon mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-2xl hover-lift border-t border-white/5">
+                    <div class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center mb-6 text-neon">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-black uppercase mb-4">Facial Symmetry</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Advanced analysis of facial proportions and
+                        bilateral balance using deep learning computer vision.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-2xl hover-lift border-t border-white/5">
+                    <div class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center mb-6 text-neon">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-black uppercase mb-4">Jawline Tracking</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Precision measurement of mandibular structure and
+                        gonial angles for definitive lookmaxxing benchmarks.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-2xl hover-lift border-t border-white/5">
+                    <div class="w-12 h-12 bg-white/5 rounded-lg flex items-center justify-center mb-6 text-neon">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-black uppercase mb-4">Daily Progression</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Track your transformation journey over time with
+                        side-by-side AI comparisons and improvement scores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section id="privacy" class="py-24 bg-dark">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="glass-purple p-10 md:p-16 rounded-[40px] border border-neon/20">
+                <h2 class="text-3xl md:text-4xl font-black italic mb-8 uppercase tracking-tight">Privacy <span
+                        class="text-neon">Policy</span></h2>
+                <div class="prose prose-invert max-w-none text-gray-300 space-y-6">
+                    <p>At CHADMAX AI, we respect your privacy and are committed to protecting it. This policy outlines
+                        how we handle your data.</p>
+                    <div class="grid gap-6">
+                        <div class="flex gap-4">
+                            <div class="text-neon font-bold">01.</div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Photo Processing
+                                </h4>
+                                <p class="text-sm">Your photos are processed using the secure OpenAI API (GPT-4o-mini
+                                    Vision) to generate facial analysis insights. We utilize enterprise-grade encryption
+                                    during transit.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-neon font-bold">02.</div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Storage</h4>
+                                <p class="text-sm">We do **NOT** store any user photos on our servers. Once the analysis
+                                    is complete, the temporary session data is purged. Your biometric privacy is our
+                                    priority.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="text-neon font-bold">03.</div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Data Usage</h4>
+                                <p class="text-sm">Data transmitted via the API is used solely for the purpose of
+                                    providing you with facial analysis results. We do not sell or share your data with
+                                    third-party advertisers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms and Disclaimer Section -->
+    <section id="terms" class="py-24 bg-black">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-black italic mb-12 uppercase tracking-tight">Terms of <span
+                    class="text-neon">Service</span></h2>
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div class="glass p-8 rounded-2xl border-l-4 border-neon">
+                    <h4 class="text-white font-bold uppercase text-xs tracking-[0.2em] mb-4">Medical Disclaimer</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        CHADMAX AI is not a medical tool. The insights provided are for entertainment and
+                        self-improvement purposes only. Consult with a qualified professional before making any
+                        significant changes to your physical regimen or health routines.
+                    </p>
+                </div>
+                <div class="glass p-8 rounded-2xl border-l-4 border-neon">
+                    <h4 class="text-white font-bold uppercase text-xs tracking-[0.2em] mb-4">Age Restriction</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        By using CHADMAX AI, you confirm that you are at least 13 years of age. This application is
+                        intended for users who meet this minimum age requirement for data processing and AI interaction.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/5 bg-dark">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-3xl font-black italic tracking-tighter mb-8">
+                CHAD<span class="text-neon">MAX</span> AI
+            </div>
+            <p class="text-gray-500 text-sm mb-8 tracking-widest uppercase">STAY OPTIMIZED. STAY CHAD.</p>
+            <a href="mailto:support@getchadmax.com"
+                class="text-neon font-bold hover:underline">support@getchadmax.com</a>
+            <div class="mt-12 text-gray-600 text-xs flex flex-col md:flex-row justify-center gap-6">
+                <span>&copy; 2026 CHADMAX AI. ALL RIGHTS RESERVED.</span>
+                <span class="hidden md:inline">|</span>
+                <a href="#privacy" class="hover:text-neon">PRIVACY</a>
+                <a href="#terms" class="hover:text-neon">TERMS</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        const navLinks = mobileMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>
