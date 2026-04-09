@@ -208,47 +208,76 @@
 
     <!-- Privacy Policy Section -->
     <section id="privacy" class="py-24 bg-dark">
-        <div class="max-w-4xl mx-auto px-6">
-            <div class="glass-purple p-10 md:p-16 rounded-[40px] border border-neon/20">
-                <h2 class="text-3xl md:text-4xl font-black italic mb-8 uppercase tracking-tight">Privacy <span
-                        class="text-neon">Policy</span></h2>
-                <div class="prose prose-invert max-w-none text-gray-300 space-y-6">
-                    <p>At CHADMAX AI, we respect your privacy and are committed to protecting it. This policy outlines
-                        how we handle your data.</p>
-                    <div class="grid gap-6">
-                        <div class="flex gap-4">
-                            <div class="text-neon font-bold">01.</div>
-                            <div>
-                                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Photo Processing
-                                </h4>
-                                <p class="text-sm">Your photos are processed using the secure OpenAI API (GPT-4o-mini
-                                    Vision) to generate facial analysis insights. We utilize enterprise-grade encryption
-                                    during transit.</p>
-                            </div>
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="glass-purple p-10 md:p-16 rounded-[40px] border border-neon/20">
+            <h2 class="text-3xl md:text-4xl font-black italic mb-8 uppercase tracking-tight">
+                Privacy <span class="text-neon">Policy</span>
+            </h2>
+            <div class="prose prose-invert max-w-none text-gray-300 space-y-6">
+                <p class="text-sm italic opacity-70">Last Updated: April 9, 2026</p>
+                <p>At CHADMAX AI, we respect your privacy. This policy outlines how we handle "Face Data" and personal information to ensure total transparency.</p>
+                
+                <div class="grid gap-8">
+                    <div class="flex gap-4">
+                        <div class="text-neon font-bold">01.</div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Collection of Face Data</h4>
+                            <p class="text-sm">When you use our "AI Scan", we collect facial geometry data (landmarks, symmetry proportions, and skin texture) from the photos you upload. This is strictly "Face Data" for analysis.</p>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="text-neon font-bold">02.</div>
-                            <div>
-                                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Storage</h4>
-                                <p class="text-sm">We do **NOT** store any user photos on our servers. Once the analysis
-                                    is complete, the temporary session data is purged. Your biometric privacy is our
-                                    priority.</p>
-                            </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="text-neon font-bold">02.</div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Purpose of Processing</h4>
+                            <p class="text-sm">We use Face Data solely to calculate aesthetic scores and provide personalized grooming recommendations. We do NOT use this data for identification, advertising, or training AI models.</p>
                         </div>
-                        <div class="flex gap-4">
-                            <div class="text-neon font-bold">03.</div>
-                            <div>
-                                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Data Usage</h4>
-                                <p class="text-sm">Data transmitted via the API is used solely for the purpose of
-                                    providing you with facial analysis results. We do not sell or share your data with
-                                    third-party advertisers.</p>
-                            </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="text-neon font-bold">03.</div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Third-Party Sharing</h4>
+                            <p class="text-sm">Photos are processed via OpenAI API (GPT-4o). OpenAI does not use data submitted via API to train their models. We never sell or rent your face data to any third parties.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="text-neon font-bold">04.</div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Storage & Security</h4>
+                            <p class="text-sm">Images are temporarily cached in a secure, encrypted Supabase bucket solely for transmission. All data is protected by industry-standard SSL/TLS encryption during transit.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="text-neon font-bold">05.</div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Ephemeral Retention</h4>
+                            <p class="text-sm text-neon font-medium">Data is automatically deleted from our servers and OpenAI’s temporary cache immediately after the report is generated (typically < 60 seconds). We do NOT maintain a face database.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="text-neon font-bold">06.</div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">User Rights & Control</h4>
+                            <p class="text-sm">Since we don't store photos permanently, there's no database to delete from. However, you can withdraw consent by not uploading photos. For inquiries, contact: [Твой Email].</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="text-neon font-bold">07.</div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Compliance</h4>
+                            <p class="text-sm">This policy complies with App Store Guidelines 5.1.1/5.1.2, GDPR, and CCPA regarding the processing of biometric and personal data.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Terms and Disclaimer Section -->
     <section id="terms" class="py-24 bg-black">
