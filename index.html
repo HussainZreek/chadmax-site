@@ -92,14 +92,20 @@
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 glass scroll-py-4">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-black tracking-tighter italic">
-                CHAD<span class="text-neon">MAX</span> AI
+            <div class="flex items-center gap-4">
+                <img src="assets/AppIcon.jpeg" alt="CHADMAX Logo"
+                    class="w-16 h-16 rounded-2xl shadow-[0_0_20px_rgba(165,0,140,0.5)] border border-white/10">
+                <div class="text-3xl md:text-4xl font-black tracking-tighter italic">
+                    CHAD<span class="text-neon">MAX</span> AI
+                </div>
             </div>
-            <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest">
+            <div class="hidden md:flex items-center space-x-8 text-sm font-bold">
                 <a href="#home" class="hover:text-neon transition">Home</a>
-                <a href="#features" class="hover:text-neon transition">Features</a>
                 <a href="#privacy" class="hover:text-neon transition">Privacy</a>
                 <a href="#terms" class="hover:text-neon transition">Terms</a>
+                <a href="#download"
+                    class="bg-white text-black px-5 py-2.5 rounded-full hover:bg-gray-200 transition shadow-[0_0_20px_rgba(255,255,255,0.3)]">Get
+                    the app</a>
             </div>
             <div class="md:hidden">
                 <!-- Mobile Menu Button (Icon) -->
@@ -129,28 +135,47 @@
         <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-neon opacity-20 blur-[120px] rounded-full"></div>
 
         <div class="container mx-auto px-6 text-center z-10">
-            <div
-                class="inline-block glass px-4 py-1 rounded-full text-xs font-black tracking-[0.2em] uppercase mb-8 border-neon/30 animate-pulse-neon">
-                Powered by GPT-4o-mini Vision
-            </div>
-            <h1 class="text-6xl md:text-8xl font-black italic tracking-tighter mb-6 leading-tight">
+            <h1 class="text-4xl md:text-6xl font-black italic tracking-tighter mb-6 leading-tight">
                 REVEAL YOUR <br> <span class="text-neon">POTENTIAL</span>
             </h1>
-            <p class="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl font-medium mb-12">
-                The world's most advanced AI facial analysis tool. Get data-driven insights into your facial structure,
-                symmetry, and aesthetic potential in seconds.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-6">
-                <a href="#"
-                    class="bg-neon text-white px-8 py-4 rounded-xl font-black uppercase tracking-widest hover:scale-105 transition shadow-2xl shadow-neon/40 flex items-center gap-3">
-                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M17.5,12.5a.5.5,0,0,0,0-1H11.5v-6a.5.5,0,0,0-1,0v6H4.5a.5.5,0,0,0,0,1H10.5v6a.5.5,0,0,0,1,0v-6Z" />
-                        <path
-                            d="M18.71,19.5H5.29A3.29,3.29,0,0,1,2,16.21V2.79A3.29,3.29,0,0,1,5.29-0.5H18.71A3.29,3.29,0,0,1,22,2.79V16.21A3.29,3.29,0,0,1,18.71,19.5ZM5.29,0.5a2.29,2.29,0,0,0-2.29,2.29V16.21a2.29,2.29,0,0,0,2.29,2.29H18.71a2.29,2.29,0,0,0,2.29-2.29V2.79a2.29,2.29,0,0,0-2.29-2.29Z" />
-                    </svg>
-                    Coming Soon to App Store
-                </a>
+
+
+            <!-- Social Proof -->
+            <div class="flex flex-col items-center justify-center gap-2 mb-1 mt-6">
+                <div class="flex items-center gap-2">
+                    <span
+                        class="text-xs md:text-sm font-bold tracking-widest text-neon uppercase drop-shadow-[0_0_8px_rgba(165,0,140,0.8)]">10,000+
+                        Scans Everyday</span>
+                </div>
+
+            </div>
+
+            <!-- App Screenshots -->
+            <div class="flex justify-center items-center gap-4 md:gap-12 mb-12 perspective-1000">
+                <img src="assets/resultPhoto.jpeg" alt="Result Analysis"
+                    class="w-48 md:w-80 rounded-[2rem] shadow-2xl shadow-neon/40 border-[6px] border-[#1C1C1E] hover:rotate-[-2deg] hover:scale-105 transition-all duration-300">
+                <img src="assets/todosPhoto.png" alt="Daily Routine"
+                    class="w-40 md:w-64 rounded-[2rem] shadow-2xl shadow-neon/40 border-[6px] border-[#1C1C1E] hover:rotate-[2deg] hover:scale-105 transition-all duration-300 md:translate-y-8">
+            </div>
+
+            <div id="download" class="flex flex-col md:flex-row justify-center items-center gap-6 mt-8 scroll-mt-24">
+                <!-- App Store -->
+                <div class="flex flex-col items-center gap-2">
+                    <a href="#" class="hover:scale-105 transition-transform duration-300 block">
+                        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000"
+                            alt="Download on the App Store" class="h-16 w-auto">
+                    </a>
+                    <span class="text-gray-500 text-xs font-bold">(soon)</span>
+                </div>
+
+                <!-- Google Play -->
+                <div class="flex flex-col items-center gap-2">
+                    <a href="#" class="hover:scale-105 transition-transform duration-300 block">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                            alt="Get it on Google Play" class="h-16 w-auto">
+                    </a>
+                    <span class="text-gray-500 text-xs font-bold">(soon)</span>
+                </div>
             </div>
         </div>
     </section>
@@ -208,141 +233,174 @@
 
     <!-- Privacy Policy Section -->
     <section id="privacy" class="py-24 bg-dark">
-    <div class="max-w-4xl mx-auto px-6">
-        <div class="glass-purple p-10 md:p-16 rounded-[40px] border border-neon/20">
-            <h2 class="text-3xl md:text-4xl font-black italic mb-8 uppercase tracking-tight">
-                Privacy <span class="text-neon">Policy</span>
-            </h2>
-            <div class="prose prose-invert max-w-none text-gray-300 space-y-6">
-                <p class="text-sm italic opacity-70">Last Updated: April 9, 2026</p>
-                <p>At CHADMAX AI, we respect your privacy. This policy outlines how we handle "Face Data" and personal information to ensure total transparency.</p>
-                
-                <div class="grid gap-8">
-                    <div class="flex gap-4">
-                        <div class="text-neon font-bold">01.</div>
-                        <div>
-                            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Collection of Face Data</h4>
-                            <p class="text-sm">When you use our "AI Scan", we collect facial geometry data (landmarks, symmetry proportions, and skin texture) from the photos you upload. This is strictly "Face Data" for analysis.</p>
-                        </div>
-                    </div>
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="glass-purple p-10 md:p-16 rounded-[40px] border border-neon/20">
+                <h2 class="text-3xl md:text-4xl font-black italic mb-8 uppercase tracking-tight">
+                    Privacy <span class="text-neon">Policy</span>
+                </h2>
+                <div class="prose prose-invert max-w-none text-gray-300 space-y-6">
+                    <p class="text-sm italic opacity-70">Last Updated: April 9, 2026</p>
+                    <p>At CHADMAX AI, we respect your privacy. This policy outlines how we handle "Face Data" and
+                        personal information to ensure total transparency.</p>
 
-                    <div class="flex gap-4">
-                        <div class="text-neon font-bold">02.</div>
-                        <div>
-                            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Purpose of Processing</h4>
-                            <p class="text-sm">We use Face Data solely to calculate aesthetic scores and provide personalized grooming recommendations. We do NOT use this data for identification, advertising, or training AI models.</p>
+                    <div class="grid gap-8">
+                        <div class="flex gap-4">
+                            <div class="text-neon font-bold">01.</div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Collection of
+                                    Face Data</h4>
+                                <p class="text-sm">When you use our "AI Scan", we collect facial geometry data
+                                    (landmarks, symmetry proportions, and skin texture) from the photos you upload. This
+                                    is strictly "Face Data" for analysis.</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="flex gap-4">
-                        <div class="text-neon font-bold">03.</div>
-                        <div>
-                            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Third-Party Sharing</h4>
-                            <p class="text-sm">Photos are processed via OpenAI API (GPT-4o). OpenAI does not use data submitted via API to train their models. We never sell or rent your face data to any third parties.</p>
+                        <div class="flex gap-4">
+                            <div class="text-neon font-bold">02.</div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Purpose of
+                                    Processing</h4>
+                                <p class="text-sm">We use Face Data solely to calculate aesthetic scores and provide
+                                    personalized grooming recommendations. We do NOT use this data for identification,
+                                    advertising, or training AI models.</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="flex gap-4">
-                        <div class="text-neon font-bold">04.</div>
-                        <div>
-                            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Storage & Security</h4>
-                            <p class="text-sm">Images are temporarily cached in a secure, encrypted Supabase bucket solely for transmission. All data is protected by industry-standard SSL/TLS encryption during transit.</p>
+                        <div class="flex gap-4">
+                            <div class="text-neon font-bold">03.</div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Third-Party
+                                    Sharing</h4>
+                                <p class="text-sm">Photos are processed via OpenAI API (GPT-4o). OpenAI does not use
+                                    data submitted via API to train their models. We never sell or rent your face data
+                                    to any third parties.</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="flex gap-4">
-                        <div class="text-neon font-bold">05.</div>
-                        <div>
-                            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Ephemeral Retention</h4>
-                            <p class="text-sm text-neon font-medium">Data is automatically deleted from our servers and OpenAI’s temporary cache immediately after the report is generated (typically < 60 seconds). We do NOT maintain a face database.</p>
+                        <div class="flex gap-4">
+                            <div class="text-neon font-bold">04.</div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Storage &
+                                    Security</h4>
+                                <p class="text-sm">Images are temporarily cached in a secure, encrypted Supabase bucket
+                                    solely for transmission. All data is protected by industry-standard SSL/TLS
+                                    encryption during transit.</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="flex gap-4">
-                        <div class="text-neon font-bold">06.</div>
-                        <div>
-                            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">User Rights & Control</h4>
-                            <p class="text-sm">Since we don't store photos permanently, there's no database to delete from. However, you can withdraw consent by not uploading photos. For inquiries, contact: chadmax.support@gmail.com.</p>
+                        <div class="flex gap-4">
+                            <div class="text-neon font-bold">05.</div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Ephemeral
+                                    Retention</h4>
+                                <p class="text-sm text-neon font-medium">Data is automatically deleted from our servers
+                                    and OpenAI’s temporary cache immediately after the report is generated (typically <
+                                        60 seconds). We do NOT maintain a face database.</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="flex gap-4">
-                        <div class="text-neon font-bold">07.</div>
-                        <div>
-                            <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Compliance</h4>
-                            <p class="text-sm">This policy complies with App Store Guidelines 5.1.1/5.1.2, GDPR, and CCPA regarding the processing of biometric and personal data.</p>
+                        <div class="flex gap-4">
+                            <div class="text-neon font-bold">06.</div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">User Rights &
+                                    Control</h4>
+                                <p class="text-sm">Since we don't store photos permanently, there's no database to
+                                    delete from. However, you can withdraw consent by not uploading photos. For
+                                    inquiries, contact: chadmax.support@gmail.com.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="text-neon font-bold">07.</div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase text-sm tracking-widest mb-1">Compliance</h4>
+                                <p class="text-sm">This policy complies with App Store Guidelines 5.1.1/5.1.2, GDPR, and
+                                    CCPA regarding the processing of biometric and personal data.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Terms and Disclaimer Section -->
     <section id="terms" class="py-24 bg-black">
-    <div class="max-w-4xl mx-auto px-6">
-        <h2 class="text-3xl md:text-4xl font-black italic mb-12 uppercase tracking-tight text-center">
-            Terms of <span class="text-neon">Service</span>
-        </h2>
-        <div class="prose prose-invert max-w-none text-gray-300 mb-12 text-sm opacity-70">
-            <p>Last Updated: April 9, 2026</p>
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-black italic mb-12 uppercase tracking-tight text-center">
+                Terms of <span class="text-neon">Service</span>
+            </h2>
+            <div class="prose prose-invert max-w-none text-gray-300 mb-12 text-sm opacity-70">
+                <p>Last Updated: April 9, 2026</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 text-left">
+                <div class="glass p-8 rounded-2xl border-l-4 border-neon">
+                    <h4 class="text-white font-bold uppercase text-xs tracking-[0.2em] mb-4">01. Acceptance</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        By downloading, accessing, or using CHADMAX AI, you agree to be bound by these Terms. If you do
+                        not agree, do not use the app.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl border-l-4 border-neon">
+                    <h4 class="text-white font-bold uppercase text-xs tracking-[0.2em] mb-4">02. Service Description
+                    </h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        CHADMAX AI provides AI-based facial analysis using secure third-party processing (OpenAI API).
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl border-l-4 border-neon md:col-span-2 bg-neon/5">
+                    <h4 class="text-neon font-bold uppercase text-xs tracking-[0.2em] mb-4">03. DATA TRANSMISSION & AI
+                        CONSENT</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        By using the "AI Scan" feature and uploading a photograph, you <strong>explicitly
+                            consent</strong> to:
+                        <br>• Transmission of your photo to our secure provider (OpenAI) for aesthetic analysis.
+                        <br>• This processing is ephemeral: data is processed and <strong>immediately deleted</strong>.
+                        <br>• This is essential for the app's core functionality.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl border-l-4 border-neon">
+                    <h4 class="text-white font-bold uppercase text-xs tracking-[0.2em] mb-4">04. Medical Disclaimer</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        CHADMAX AI is for entertainment and self-improvement purposes only. It does not provide medical
+                        advice, diagnosis, or treatment.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl border-l-4 border-neon">
+                    <h4 class="text-white font-bold uppercase text-xs tracking-[0.2em] mb-4">05. Age & Responsibility
+                    </h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        You must be at least 13 years old. You represent that you own or have the rights to the
+                        photographs you upload.
+                    </p>
+                </div>
+
+                <div class="glass p-8 rounded-2xl border-l-4 border-neon md:col-span-2">
+                    <h4 class="text-white font-bold uppercase text-xs tracking-[0.2em] mb-4">06. Liability & Privacy
+                    </h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        CHADMAX AI is not liable for results provided by the AI analysis. Your use of the app is also
+                        governed by our Privacy Policy regarding ephemeral data retention.
+                    </p>
+                </div>
+            </div>
         </div>
-        
-        <div class="grid md:grid-cols-2 gap-8 text-left">
-            <div class="glass p-8 rounded-2xl border-l-4 border-neon">
-                <h4 class="text-white font-bold uppercase text-xs tracking-[0.2em] mb-4">01. Acceptance</h4>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    By downloading, accessing, or using CHADMAX AI, you agree to be bound by these Terms. If you do not agree, do not use the app.
-                </p>
-            </div>
-
-            <div class="glass p-8 rounded-2xl border-l-4 border-neon">
-                <h4 class="text-white font-bold uppercase text-xs tracking-[0.2em] mb-4">02. Service Description</h4>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    CHADMAX AI provides AI-based facial analysis using secure third-party processing (OpenAI API).
-                </p>
-            </div>
-
-            <div class="glass p-8 rounded-2xl border-l-4 border-neon md:col-span-2 bg-neon/5">
-                <h4 class="text-neon font-bold uppercase text-xs tracking-[0.2em] mb-4">03. DATA TRANSMISSION & AI CONSENT</h4>
-                <p class="text-gray-300 text-sm leading-relaxed">
-                    By using the "AI Scan" feature and uploading a photograph, you <strong>explicitly consent</strong> to:
-                    <br>• Transmission of your photo to our secure provider (OpenAI) for aesthetic analysis.
-                    <br>• This processing is ephemeral: data is processed and <strong>immediately deleted</strong>.
-                    <br>• This is essential for the app's core functionality.
-                </p>
-            </div>
-
-            <div class="glass p-8 rounded-2xl border-l-4 border-neon">
-                <h4 class="text-white font-bold uppercase text-xs tracking-[0.2em] mb-4">04. Medical Disclaimer</h4>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    CHADMAX AI is for entertainment and self-improvement purposes only. It does not provide medical advice, diagnosis, or treatment.
-                </p>
-            </div>
-
-            <div class="glass p-8 rounded-2xl border-l-4 border-neon">
-                <h4 class="text-white font-bold uppercase text-xs tracking-[0.2em] mb-4">05. Age & Responsibility</h4>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    You must be at least 13 years old. You represent that you own or have the rights to the photographs you upload.
-                </p>
-            </div>
-
-            <div class="glass p-8 rounded-2xl border-l-4 border-neon md:col-span-2">
-                <h4 class="text-white font-bold uppercase text-xs tracking-[0.2em] mb-4">06. Liability & Privacy</h4>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    CHADMAX AI is not liable for results provided by the AI analysis. Your use of the app is also governed by our Privacy Policy regarding ephemeral data retention.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer class="py-20 border-t border-white/5 bg-dark">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="text-3xl font-black italic tracking-tighter mb-8">
-                CHAD<span class="text-neon">MAX</span> AI
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <img src="assets/AppIcon.jpeg" alt="CHADMAX Logo"
+                    class="w-10 h-10 rounded-xl shadow-[0_0_15px_rgba(165,0,140,0.5)] border border-white/10">
+                <div class="text-3xl font-black italic tracking-tighter">
+                    CHAD<span class="text-neon">MAX</span> AI
+                </div>
             </div>
             <p class="text-gray-500 text-sm mb-8 tracking-widest uppercase">STAY OPTIMIZED. STAY CHAD.</p>
             <a href="mailto:support@getchadmax.com"
