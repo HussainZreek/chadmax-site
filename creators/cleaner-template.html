@@ -182,16 +182,6 @@
             -webkit-appearance: none;
             margin: 0;
         }
-
-        @media (max-width: 640px) {
-            .card-wrapper {
-                transform: scale(0.65);
-                transform-origin: top center;
-                height: 380px;
-                display: flex;
-                justify-content: center;
-            }
-        }
     </style>
     <script>
         tailwind.config = {
@@ -548,8 +538,23 @@
             link.href = finalCanvas.toDataURL('image/png');
             link.click();
         });
-    </script>
+        // Responsive scaling for mobile
+        function resizeCard() {
+            const wrapper = document.querySelector('.card-wrapper');
+            if (window.innerWidth < 600) {
+                const scale = (window.innerWidth - 32) / 560; // 32px padding
+                wrapper.style.transform = `scale(${Math.min(scale, 1)})`;
+                wrapper.style.transformOrigin = 'top center';
+                wrapper.style.height = `${560 * Math.min(scale, 1)}px`;
+            } else {
+                wrapper.style.transform = 'none';
+                wrapper.style.height = 'auto';
+            }
+        }
+        window.addEventListener('resize', resizeCard);
+        resizeCard();
 
+    </script>
 </body>
 
 </html>
