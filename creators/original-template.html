@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHADMAX AI | Original Ratings Template</title>
+    <link rel="icon" type="image/jpeg" href="../assets/AppIcon.jpeg">
+    <link rel="apple-touch-icon" href="../assets/AppIcon.jpeg">
+    <meta name="description" content="CHADMAX AI: Original Ratings Template Creator">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet"
+        crossorigin="anonymous">
+    <style>
+        :root {
+            --neon-purple: #A5008C;
+            --pure-black: #000000;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--pure-black);
+            color: white;
+        }
+
+        .text-neon {
+            color: var(--neon-purple);
+            text-shadow: 0 0 10px rgba(165, 0, 140, 0.5), 0 0 20px rgba(165, 0, 140, 0.3);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-cta {
+            display: flex;
+            align-items: center;
+            border: 1px solid rgba(165, 0, 140, 0.4);
+            box-shadow: 0 0 20px rgba(165, 0, 140, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+            border-radius: 9999px;
+            padding: 8px 12px 8px 16px;
+            gap: 10px;
+            margin: 0 auto 16px auto;
+            width: 100%;
+            max-width: 280px;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .glass-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            z-index: -1;
+        }
+
+        /* Card styling */
+        .card-preview {
+            background: url('../assets/card_background.jpeg') no-repeat center top;
+            background-size: cover;
+            border-radius: 0;
+            width: 360px;
+            height: 640px;
+            min-width: 360px;
+            min-height: 640px;
+            max-width: 360px;
+            max-height: 640px;
+            box-sizing: border-box;
+            padding: 16px 24px 24px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .photo-circle {
+            width: 190px;
+            height: 190px;
+            min-width: 190px;
+            min-height: 190px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            border: 2px solid var(--neon-purple);
+            overflow: hidden;
+            margin: 0 auto;
+            background: #2C2C2E;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .photo-circle:hover {
+            border-color: #d400b0;
+        }
+
+        .photo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .metric-bar-track {
+            width: 100%;
+            height: 10px;
+            background: #3A3A3C;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .metric-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s ease, background-color 0.3s ease;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 6px;
+            background: #3A3A3C;
+            border-radius: 3px;
+            outline: none;
+            background-image: linear-gradient(white, white);
+            background-size: var(--val, 0%) 100%;
+            background-repeat: no-repeat;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Number input styling */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#A5008C',
+                        dark: '#000000',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="selection:bg-neon selection:text-white min-h-screen py-10 px-4">
+
+    <!-- Back link -->
+    <div class="max-w-7xl mx-auto mb-6">
+        <a href="./" class="text-white hover:text-white transition text-sm flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Back
+        </a>
+    </div>
+
+    <!-- Page Title -->
+    <h1 class="text-3xl md:text-4xl font-black text-center mb-10 tracking-tight">Template Preview</h1>
+
+    <!-- Main Layout -->
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+
+        <!-- LEFT: Card Preview -->
+        <div class="flex justify-center lg:justify-end">
+            <div class="card-preview" id="template-card">
+                <!-- CTA Search Bar -->
+                <div class="glass-cta">
+                    <svg style="width: 24px; height: 24px; color: white; flex-shrink: 0;" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <div style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <img src="../assets/AppIcon.jpeg" alt="Logo"
+                            style="width: 32px; height: 32px; border-radius: 9px; flex-shrink: 0;">
+                        <span
+                            style="font-size: 20px; font-weight: 900; color: white; white-space: nowrap; letter-spacing: 0.5px;">CHADMAX</span>
+                    </div>
+                    <img src="../assets/App_Store_(iOS).svg.png" alt="App Store"
+                        style="width: 32px; height: 32px; border-radius: 9px; flex-shrink: 0;">
+                </div>
+
+                <!-- Photo Circle -->
+                <div class="photo-circle mb-1" id="photo-area"
+                    onclick="document.getElementById('image-upload').click()">
+                    <div id="placeholder-icon" class="text-center text-white">
+                        <svg class="w-10 h-10 mx-auto mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span class="text-[10px]">Insert Image</span>
+                    </div>
+                    <img id="uploaded-photo" src="" alt="" class="hidden">
+                </div>
+
+                <!-- Score -->
+                <div class="text-center mb-6 flex justify-center">
+                    <div class="relative inline-flex items-baseline">
+                        <span class="text-7xl font-black text-white" id="score-display">7.2</span>
+                        <span class="text-3xl text-gray-400 font-bold absolute left-full ml-1 bottom-2">/10</span>
+                    </div>
+                </div>
+
+                <!-- Metrics Grid -->
+                <div class="grid grid-cols-2 gap-x-6 gap-y-5" id="metrics-grid">
+                    <!-- Overall -->
+                    <div>
+                        <div class="text-[14px] font-bold uppercase tracking-widest text-white mb-1">Overall</div>
+                        <div class="text-2xl font-black text-white" id="card-overall">72%</div>
+                        <div class="metric-bar-track mt-1">
+                            <div class="metric-bar-fill" id="bar-overall" style="width: 72%; background: #B8D500;">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Potential -->
+                    <div>
+                        <div class="text-[14px] font-bold uppercase tracking-widest text-white mb-1">Potential</div>
+                        <div class="text-2xl font-black text-white" id="card-potential">85%</div>
+                        <div class="metric-bar-track mt-1">
+                            <div class="metric-bar-fill" id="bar-potential" style="width: 85%; background: #00D26A;">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Masculinity -->
+                    <div>
+                        <div class="text-[14px] font-bold uppercase tracking-widest text-white mb-1">Masculinity
+                        </div>
+                        <div class="text-2xl font-black text-white" id="card-masculinity">75%</div>
+                        <div class="metric-bar-track mt-1">
+                            <div class="metric-bar-fill" id="bar-masculinity" style="width: 75%; background: #8BC34A;">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Jawline -->
+                    <div>
+                        <div class="text-[14px] font-bold uppercase tracking-widest text-white mb-1">Jawline</div>
+                        <div class="text-2xl font-black text-white" id="card-jawline">80%</div>
+                        <div class="metric-bar-track mt-1">
+                            <div class="metric-bar-fill" id="bar-jawline" style="width: 80%; background: #4CAF50;">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cheekbones -->
+                    <div>
+                        <div class="text-[14px] font-bold uppercase tracking-widest text-white mb-1">Cheekbones</div>
+                        <div class="text-2xl font-black text-white" id="card-cheekbones">70%</div>
+                        <div class="metric-bar-track mt-1">
+                            <div class="metric-bar-fill" id="bar-cheekbones" style="width: 70%; background: #B8D500;">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Skin -->
+                    <div>
+                        <div class="text-[14px] font-bold uppercase tracking-widest text-white mb-1">Skin</div>
+                        <div class="text-2xl font-black text-white" id="card-skin">65%</div>
+                        <div class="metric-bar-track mt-1">
+                            <div class="metric-bar-fill" id="bar-skin" style="width: 65%; background: #FFD600;"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- MIDDLE: Customize Ratings -->
+        <div class="glass rounded-2xl p-6 border border-white/10">
+            <h2 class="text-xl font-bold mb-6 text-white">Customize Ratings</h2>
+
+            <!-- Upload Image -->
+            <button onclick="document.getElementById('image-upload').click()"
+                class="w-full mb-6 py-3 px-4 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:text-white transition flex items-center justify-center gap-2 text-sm font-semibold">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Upload Image
+            </button>
+            <input type="file" id="image-upload" accept="image/*" class="hidden">
+
+            <!-- Adjust Image Position & Size -->
+            <div id="image-adjust-controls" class="glass rounded-xl p-5 mb-6 border border-white/10 hidden">
+                <h3 class="text-sm font-bold text-white mb-4">Adjust Image Position & Size</h3>
+
+                <!-- Horizontal Position -->
+                <div class="mb-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-xs font-semibold text-white">Horizontal Position</label>
+                        <span id="label-pos-x" class="text-xs text-white">0px</span>
+                    </div>
+                    <input type="range" id="slider-pos-x" min="-200" max="200" value="0" class="w-full">
+                </div>
+
+                <!-- Vertical Position -->
+                <div class="mb-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-xs font-semibold text-white">Vertical Position</label>
+                        <span id="label-pos-y" class="text-xs text-white">0px</span>
+                    </div>
+                    <input type="range" id="slider-pos-y" min="-200" max="200" value="0" class="w-full">
+                </div>
+
+                <!-- Zoom -->
+                <div class="mb-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-xs font-semibold text-white">Zoom</label>
+                        <span id="label-zoom" class="text-xs text-white">100%</span>
+                    </div>
+                    <input type="range" id="slider-zoom" min="10" max="300" value="100" class="w-full">
+                </div>
+
+                <button id="btn-reset-image"
+                    class="w-full py-2 rounded-lg bg-black/40 border border-white/10 text-white hover:text-white text-xs font-bold transition">Reset
+                    Position & Zoom</button>
+            </div>
+
+            <!-- Sliders -->
+            <div class="space-y-5">
+                <!-- Overall -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-semibold text-white">Overall</label>
+                        <input type="number" id="input-overall" value="72" min="0" max="100"
+                            class="w-12 bg-white/5 border border-white/10 rounded-lg text-center text-white text-sm py-1 focus:outline-none focus:border-neon">
+                    </div>
+                    <input type="range" id="slider-overall" min="0" max="100" value="72">
+                </div>
+                <!-- Potential -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-semibold text-white">Potential</label>
+                        <input type="number" id="input-potential" value="85" min="0" max="100"
+                            class="w-12 bg-white/5 border border-white/10 rounded-lg text-center text-white text-sm py-1 focus:outline-none focus:border-neon">
+                    </div>
+                    <input type="range" id="slider-potential" min="0" max="100" value="85">
+                </div>
+                <!-- Masculinity -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-semibold text-white">Masculinity</label>
+                        <input type="number" id="input-masculinity" value="75" min="0" max="100"
+                            class="w-12 bg-white/5 border border-white/10 rounded-lg text-center text-white text-sm py-1 focus:outline-none focus:border-neon">
+                    </div>
+                    <input type="range" id="slider-masculinity" min="0" max="100" value="75">
+                </div>
+                <!-- Jawline -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-semibold text-white">Jawline</label>
+                        <input type="number" id="input-jawline" value="80" min="0" max="100"
+                            class="w-12 bg-white/5 border border-white/10 rounded-lg text-center text-white text-sm py-1 focus:outline-none focus:border-neon">
+                    </div>
+                    <input type="range" id="slider-jawline" min="0" max="100" value="80">
+                </div>
+                <!-- Cheekbones -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-semibold text-white">Cheekbones</label>
+                        <input type="number" id="input-cheekbones" value="70" min="0" max="100"
+                            class="w-12 bg-white/5 border border-white/10 rounded-lg text-center text-white text-sm py-1 focus:outline-none focus:border-neon">
+                    </div>
+                    <input type="range" id="slider-cheekbones" min="0" max="100" value="70">
+                </div>
+                <!-- Skin -->
+                <div>
+                    <div class="flex justify-between items-center mb-2">
+                        <label class="text-sm font-semibold text-white">Skin</label>
+                        <input type="number" id="input-skin" value="65" min="0" max="100"
+                            class="w-12 bg-white/5 border border-white/10 rounded-lg text-center text-white text-sm py-1 focus:outline-none focus:border-neon">
+                    </div>
+                    <input type="range" id="slider-skin" min="0" max="100" value="65">
+                </div>
+            </div>
+
+            <!-- Download Button -->
+            <button id="download-btn"
+                class="w-full mt-8 py-3 px-4 rounded-xl font-bold text-sm text-white bg-neon hover:bg-[#80006c] transition flex items-center justify-center gap-2">
+                Download Template (.png)
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- RIGHT: How to Use -->
+        <div class="glass rounded-2xl p-6 border border-white/10">
+            <h2 class="text-xl font-bold mb-6 text-white">How to Use</h2>
+            <div class="space-y-5">
+                <div class="flex items-start gap-3">
+                    <div class="mt-0.5">
+                        <svg class="w-5 h-5 text-neon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <p class="text-white text-sm leading-relaxed">Upload an image and drag to reposition, scroll to
+                        zoom</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <div class="mt-0.5 text-neon">•</div>
+                    <p class="text-white text-sm leading-relaxed">Adjust Overall and Potential ratings (0-100% scale)
+                    </p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <div class="mt-0.5 text-neon">•</div>
+                    <p class="text-white text-sm leading-relaxed">Adjust Masculinity, Jawline, Cheekbones, and Skin
+                        (0-100% scale)</p>
+                </div>
+                <div class="flex items-start gap-3">
+                    <div class="mt-0.5">
+                        <svg class="w-5 h-5 text-neon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                    </div>
+                    <p class="text-white text-sm leading-relaxed">Download creates a 1080×1920 image perfect for
+                        social media</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const metrics = ['overall', 'potential', 'masculinity', 'jawline', 'cheekbones', 'skin'];
+
+        // Color based on value
+        function getBarColor(value) {
+            if (value >= 85) return '#00D26A';
+            if (value >= 75) return '#4CAF50';
+            if (value >= 65) return '#8BC34A';
+            if (value >= 55) return '#B8D500';
+            if (value >= 45) return '#FFD600';
+            if (value >= 35) return '#FF9800';
+            return '#F44336';
+        }
+
+        function updateMetric(name, value) {
+            value = Math.max(0, Math.min(100, parseInt(value) || 0));
+            const slider = document.getElementById(`slider-${name}`);
+            slider.value = value;
+            document.getElementById(`input-${name}`).value = value;
+            document.getElementById(`card-${name}`).textContent = value + '%';
+            const bar = document.getElementById(`bar-${name}`);
+            bar.style.width = value + '%';
+            bar.style.background = getBarColor(value);
+            const pct = ((value - slider.min) / (slider.max - slider.min)) * 100;
+            slider.style.setProperty('--val', pct + '%');
+            updateScore();
+        }
+
+        function updateScore() {
+            const overallValue = parseInt(document.getElementById('slider-overall').value) || 0;
+            const score = (overallValue / 10).toFixed(1);
+            document.getElementById('score-display').textContent = score;
+        }
+
+        // Initialize sliders
+        function initSlider(slider) {
+            const pct = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+            slider.style.setProperty('--val', pct + '%');
+        }
+
+        // Bind sliders and inputs
+        metrics.forEach(name => {
+            const slider = document.getElementById(`slider-${name}`);
+            const input = document.getElementById(`input-${name}`);
+            initSlider(slider);
+            slider.addEventListener('input', () => updateMetric(name, slider.value));
+            input.addEventListener('input', () => updateMetric(name, input.value));
+            input.addEventListener('blur', () => updateMetric(name, input.value));
+        });
+
+        // Image upload
+        const imageUpload = document.getElementById('image-upload');
+        imageUpload.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                const img = document.getElementById('uploaded-photo');
+                img.src = ev.target.result;
+                img.classList.remove('hidden');
+                document.getElementById('placeholder-icon').classList.add('hidden');
+                document.getElementById('image-adjust-controls').classList.remove('hidden');
+            };
+            reader.readAsDataURL(file);
+        });
+
+        // Image Adjustments
+        const sliderPosX = document.getElementById('slider-pos-x');
+        const sliderPosY = document.getElementById('slider-pos-y');
+        const sliderZoom = document.getElementById('slider-zoom');
+        const labelPosX = document.getElementById('label-pos-x');
+        const labelPosY = document.getElementById('label-pos-y');
+        const labelZoom = document.getElementById('label-zoom');
+        const btnResetImage = document.getElementById('btn-reset-image');
+
+        function updateImageTransform() {
+            const x = sliderPosX.value;
+            const y = sliderPosY.value;
+            const z = sliderZoom.value;
+
+            labelPosX.textContent = x + 'px';
+            labelPosY.textContent = y + 'px';
+            labelZoom.textContent = z + '%';
+
+            const pctX = ((x - sliderPosX.min) / (sliderPosX.max - sliderPosX.min)) * 100;
+            const pctY = ((y - sliderPosY.min) / (sliderPosY.max - sliderPosY.min)) * 100;
+            const pctZ = ((z - sliderZoom.min) / (sliderZoom.max - sliderZoom.min)) * 100;
+            sliderPosX.style.setProperty('--val', pctX + '%');
+            sliderPosY.style.setProperty('--val', pctY + '%');
+            sliderZoom.style.setProperty('--val', pctZ + '%');
+
+            const uploadedPhoto = document.getElementById('uploaded-photo');
+            uploadedPhoto.style.transform = `translate(${x}px, ${y}px) scale(${z / 100})`;
+        }
+
+        initSlider(sliderPosX);
+        initSlider(sliderPosY);
+        initSlider(sliderZoom);
+
+        sliderPosX.addEventListener('input', updateImageTransform);
+        sliderPosY.addEventListener('input', updateImageTransform);
+        sliderZoom.addEventListener('input', updateImageTransform);
+
+        btnResetImage.addEventListener('click', () => {
+            sliderPosX.value = 0;
+            sliderPosY.value = 0;
+            sliderZoom.value = 100;
+            updateImageTransform();
+        });
+
+        // Download as PNG using html-to-image
+        document.getElementById('download-btn').addEventListener('click', async () => {
+            // Dynamically load html-to-image if not loaded
+            if (typeof htmlToImage === 'undefined') {
+                const script = document.createElement('script');
+                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html-to-image/1.11.11/html-to-image.min.js';
+                document.head.appendChild(script);
+                await new Promise(resolve => script.onload = resolve);
+            }
+            const card = document.getElementById('template-card');
+
+            const canvas = await htmlToImage.toCanvas(card, {
+                backgroundColor: '#1C1C1E',
+                pixelRatio: 3,
+                width: 360,
+                height: 640
+            });
+            // Create 1080x1920 canvas
+            const finalCanvas = document.createElement('canvas');
+            finalCanvas.width = 1080;
+            finalCanvas.height = 1920;
+            const ctx = finalCanvas.getContext('2d');
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, 1080, 1920);
+            // Draw image perfectly edge to edge
+            ctx.drawImage(canvas, 0, 0, 1080, 1920);
+            // Download
+            const link = document.createElement('a');
+            link.download = 'chadmax-rating.png';
+            link.href = finalCanvas.toDataURL('image/png');
+            link.click();
+        });
+    </script>
+
+</body>
+
+</html>

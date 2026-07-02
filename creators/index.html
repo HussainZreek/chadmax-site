@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHADMAX AI | Creator Tools</title>
+    <link rel="icon" type="image/jpeg" href="../assets/AppIcon.jpeg">
+    <link rel="apple-touch-icon" href="../assets/AppIcon.jpeg">
+    <meta name="description" content="CHADMAX AI: Creator Tools and Templates.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-purple: #A5008C;
+            --pure-black: #000000;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--pure-black);
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        .text-neon {
+            color: var(--neon-purple);
+            text-shadow: 0 0 10px rgba(165, 0, 140, 0.5), 0 0 20px rgba(165, 0, 140, 0.3);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neon: '#A5008C',
+                        dark: '#000000',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="selection:bg-neon selection:text-white min-h-screen flex items-center justify-center py-16">
+
+    <!-- Creators Section -->
+    <section id="creators" class="w-full relative">
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <h1 class="text-4xl md:text-5xl font-black mb-16 text-center tracking-tight text-white">
+                Creator Tools
+            </h1>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- NEW (Cleaner) Ratings Template -->
+                <a href="cleaner-template.html" class="glass p-8 rounded-2xl hover-lift border border-white/10 group cursor-pointer relative block">
+                    <div
+                        class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 text-white group-hover:text-neon transition-colors">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold mb-3 text-white">
+                        (Cleaner) Ratings Template
+                    </h2>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Simplified rating template with just Overall and Potential scores
+                    </p>
+                </a>
+
+                <!-- Original Ratings Template -->
+                <a href="original-template.html" class="glass p-8 rounded-2xl hover-lift border border-white/10 group cursor-pointer relative block">
+                    <div
+                        class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 text-white group-hover:text-neon transition-colors">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold mb-3 text-white">Original Ratings Template</h2>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Full rating cards with all metrics: Overall, Potential, Jawline, Masculinity and more
+                    </p>
+                </a>
+
+                <!-- Video Examples -->
+                <div class="glass p-8 rounded-2xl hover-lift border border-white/10 group cursor-pointer relative">
+                    <div
+                        class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 text-white group-hover:text-neon transition-colors">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold mb-3 text-white">Video Examples</h2>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Watch example videos showcasing template usage and content creation tips
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
