@@ -468,14 +468,18 @@
         function adjustScale() {
             const card = document.getElementById('template-card');
             if(!card) return;
-            const parentWidth = card.parentElement.clientWidth;
             const targetWidth = 360;
+            const targetHeight = 640;
             
-            if (parentWidth < targetWidth && parentWidth > 0) {
-                const scale = parentWidth / targetWidth;
+            // Scale based on both viewport width and height to ensure visibility
+            const scaleX = (window.innerWidth * 0.95) / targetWidth;
+            const scaleY = (window.innerHeight * 0.55) / targetHeight; // reserve 45% of screen for controls
+            const scale = Math.min(scaleX, scaleY, 1);
+            
+            if (scale < 1) {
                 card.style.transform = `scale(${scale})`;
                 card.style.transformOrigin = 'top center';
-                card.parentElement.style.height = `${640 * scale}px`;
+                card.parentElement.style.height = `${targetHeight * scale}px`;
             } else {
                 card.style.transform = 'none';
                 card.parentElement.style.height = 'auto';
