@@ -541,11 +541,15 @@
         // Responsive scaling for mobile
         function resizeCard() {
             const wrapper = document.querySelector('.card-wrapper');
-            if (window.innerWidth < 600) {
-                const scale = (window.innerWidth - 32) / 560; // 32px padding
-                wrapper.style.transform = `scale(${Math.min(scale, 1)})`;
+            if (window.innerWidth < 1024) {
+                // Ensure the template height doesn't exceed 360px on mobile
+                // so the user can see both the template and the edit controls at the same time!
+                const scaleH = 360 / 560;
+                const scaleW = (window.innerWidth - 32) / 560;
+                const scale = Math.min(scaleW, scaleH);
+                wrapper.style.transform = `scale(${scale})`;
                 wrapper.style.transformOrigin = 'top center';
-                wrapper.style.height = `${560 * Math.min(scale, 1)}px`;
+                wrapper.style.height = `${560 * scale}px`;
             } else {
                 wrapper.style.transform = 'none';
                 wrapper.style.height = 'auto';
