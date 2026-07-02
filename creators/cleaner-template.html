@@ -217,7 +217,7 @@
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
 
         <!-- LEFT: Card Preview -->
-        <div class="flex justify-center lg:justify-end">
+        <div class="flex justify-center lg:justify-end w-full overflow-hidden" id="card-wrapper">
             <div class="card-preview" id="template-card">
                 <!-- CTA Search Bar -->
                 <div class="glass-cta">
@@ -401,6 +401,26 @@
     </div>
 
     <script>
+        // --- Scale for Mobile ---
+        function adjustScale() {
+            const card = document.getElementById('template-card');
+            if(!card) return;
+            const parentWidth = card.parentElement.clientWidth;
+            const targetWidth = 560;
+            
+            if (parentWidth < targetWidth && parentWidth > 0) {
+                const scale = parentWidth / targetWidth;
+                card.style.transform = `scale(${scale})`;
+                card.style.transformOrigin = 'top center';
+                card.parentElement.style.height = `${560 * scale}px`;
+            } else {
+                card.style.transform = 'none';
+                card.parentElement.style.height = 'auto';
+            }
+        }
+        window.addEventListener('resize', adjustScale);
+        window.addEventListener('load', adjustScale);
+        document.addEventListener('DOMContentLoaded', adjustScale);
         const metrics = ['overall', 'potential'];
 
         // Color based on value
@@ -514,6 +534,10 @@
             }
             const card = document.getElementById('template-card');
 
+            // Temporarily disable scale for high-res export
+            const originalTransform = card.style.transform;
+            card.style.transform = 'none';
+
             const canvas = await htmlToImage.toCanvas(card, {
                 backgroundColor: '#1C1C1E',
                 pixelRatio: 3,
@@ -534,6 +558,9 @@
             link.download = 'chadmax-rating.png';
             link.href = finalCanvas.toDataURL('image/png');
             link.click();
+            
+            // Restore scale
+            card.style.transform = originalTransform;
         });
     </script>
 
