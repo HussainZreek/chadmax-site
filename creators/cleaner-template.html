@@ -42,10 +42,10 @@
             align-items: center;
             border: 1px solid rgba(165, 0, 140, 0.4);
             border-radius: 9999px;
-            padding: 10px 14px 10px 18px;
+            padding: 14px 18px 14px 22px;
             gap: 12px;
             margin: 0 auto 8px auto;
-            width: 320px;
+            width: 380px;
             position: relative;
             z-index: 1;
             overflow: hidden;
@@ -82,7 +82,7 @@
 
         /* Card styling */
         .card-preview {
-            background: url('../assets/card_background.jpeg') no-repeat center center;
+            background: url('../assets/mesh-gradient-1080x1080 (2).png') no-repeat center center;
             background-size: cover;
             border-radius: 0;
             width: 560px;
@@ -97,11 +97,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            overflow: hidden;
         }
 
         .photo-circle {
-            width: 270px;
-            height: 270px;
+            width: 294px;
+            height: 294px;
             border-radius: 50%;
             border: 2px solid var(--neon-purple);
             overflow: hidden;
@@ -201,7 +202,8 @@
 
     <!-- Back link -->
     <div class="max-w-7xl mx-auto px-6 mb-6">
-        <a href="/creators" class="text-white hover:text-neon flex items-center gap-2 w-fit transition text-xl font-bold">
+        <a href="/creators"
+            class="text-white hover:text-neon flex items-center gap-2 w-fit transition text-xl font-bold">
             <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
@@ -218,25 +220,19 @@
         <!-- LEFT: Card Preview -->
         <div class="flex justify-center lg:justify-end card-wrapper">
             <div class="card-preview" id="template-card">
-                <!-- CTA Search Bar -->
-                <div class="glass-cta">
-                    <svg style="width: 26px; height: 26px; color: white; flex-shrink: 0;" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                    <div style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                        <img src="../assets/AppIcon.jpeg" alt="Logo"
-                            style="width: 38px; height: 38px; border-radius: 9px; flex-shrink: 0;">
-                        <span
-                            style="font-size: 21px; font-weight: 900; color: white; white-space: nowrap; letter-spacing: 0.5px;">CHADMAX</span>
-                    </div>
+                <!-- Big Transparent CTA -->
+                <div
+                    style="display: flex; align-items: center; justify-content: center; gap: 15px; width: 100%; padding-top: 0px; padding-bottom: 1px; margin-top: -5px;">
+                    <img src="../assets/AppIcon.jpeg" alt="Logo"
+                        style="width: 80px; height: 80px; border-radius: 26px; flex-shrink: 0; object-fit: cover;">
+                    <span
+                        style="font-size: 45px; font-weight: 900; color: white; letter-spacing: -1px; line-height: 1;">CHADMAX</span>
                     <img src="../assets/App_Store_(iOS).svg.png" alt="App Store"
-                        style="width: 38px; height: 38px; border-radius: 9px; flex-shrink: 0;">
+                        style="width: 80px; height: 80px; border-radius: 26px; flex-shrink: 0; object-fit: cover;">
                 </div>
 
                 <!-- Photo Circle -->
-                <div class="photo-circle -mt-6 -mb-12 relative z-10" style="transform: translateY(-10px);"
+                <div class="photo-circle -mt-8 -mb-12 relative z-10" style="transform: translateY(-17px);"
                     id="photo-area" onclick="document.getElementById('image-upload').click()">
                     <div id="placeholder-icon" class="text-center text-white">
                         <svg class="w-10 h-10 mx-auto mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -251,33 +247,45 @@
 
 
                 <!-- Metrics Grid -->
-                <div class="grid grid-cols-2 gap-x-3 gap-y-5 relative z-0" id="metrics-grid">
+                <div class="rounded-3xl relative z-0 mx-auto mt-2 flex items-center justify-between overflow-hidden"
+                    style="width: 520px; background: rgba(5, 8, 15, 0.96); border: 1px solid rgba(255, 255, 255, 0.08); padding: 18px 0;"
+                    id="metrics-grid">
+
                     <!-- Overall -->
-                    <div
-                        class="glass-metric rounded-2xl px-5 py-5 min-h-[170px] flex flex-col justify-between text-left">
-                        <div>
-                            <div class="text-2xl font-black uppercase text-[#A5008C] mb-2">Overall</div>
-                            <div class="text-6xl font-black text-white mb-2" id="card-overall">7.2</div>
-                        </div>
-                        <div class="metric-bar-track mt-1 bg-white/10 h-[16px] rounded-full overflow-hidden w-full">
-                            <div class="metric-bar-fill h-full rounded-full" id="bar-overall"
-                                style="width: 72%; background: #B8D500;">
+                    <div class="flex-1 flex flex-col items-center border-r border-white/10">
+                        <div class="text-[19px] font-black uppercase tracking-[0.1em] mb-2 text-[#A5008C]"
+                            id="label-overall">Overall</div>
+                        <div class="text-[46px] font-black text-white leading-none mb-3 tracking-tight"
+                            id="card-overall">7.2</div>
+                        <div class="bg-white/10 h-[8px] rounded-full overflow-hidden w-[90px]">
+                            <div class="h-full rounded-full transition-colors" id="bar-overall" style="width: 72%;">
                             </div>
                         </div>
                     </div>
+
                     <!-- Potential -->
-                    <div
-                        class="glass-metric rounded-2xl px-5 py-5 min-h-[170px] flex flex-col justify-between text-left">
-                        <div>
-                            <div class="text-2xl font-black uppercase text-[#A5008C] mb-2">Potential</div>
-                            <div class="text-6xl font-black text-white mb-2" id="card-potential">8.5</div>
-                        </div>
-                        <div class="metric-bar-track mt-1 bg-white/10 h-[16px] rounded-full overflow-hidden w-full">
-                            <div class="metric-bar-fill h-full rounded-full" id="bar-potential"
-                                style="width: 85%; background: #00D26A;">
+                    <div class="flex-1 flex flex-col items-center border-r border-white/10">
+                        <div class="text-[19px] font-black uppercase tracking-[0.1em] mb-2 text-[#A5008C]"
+                            id="label-potential">Potential</div>
+                        <div class="text-[46px] font-black text-white leading-none mb-3 tracking-tight"
+                            id="card-potential">8.5</div>
+                        <div class="bg-white/10 h-[8px] rounded-full overflow-hidden w-[90px]">
+                            <div class="h-full rounded-full transition-colors" id="bar-potential" style="width: 85%;">
                             </div>
                         </div>
                     </div>
+
+                    <!-- Rank -->
+                    <div class="flex-1 flex flex-col items-center">
+                        <div class="text-[19px] font-black uppercase tracking-[0.1em] mb-2 text-[#A5008C]"
+                            id="label-psl">Rank</div>
+                        <div class="text-[42px] font-black text-white leading-none mb-3 tracking-tight" id="card-psl">
+                            CHADLITE</div>
+                        <div class="bg-white/10 h-[8px] rounded-full overflow-hidden w-[90px]">
+                            <div class="h-full rounded-full transition-colors" id="bar-psl" style="width: 72%;"></div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -413,15 +421,45 @@
             return '#F44336';
         }
 
+        function getRatingText(value) {
+            if (value >= 90) return 'ADAM';
+            if (value >= 80) return 'CHAD';
+            if (value >= 70) return 'CHADLITE';
+            if (value >= 60) return 'HTN';
+            if (value >= 50) return 'MTN';
+            if (value >= 40) return 'LTN';
+            if (value >= 30) return 'SUB5';
+            return 'SUB3';
+        }
+
         function updateMetric(name, value) {
             value = Math.max(0, Math.min(100, parseInt(value) || 0));
             const slider = document.getElementById(`slider-${name}`);
             slider.value = value;
             document.getElementById(`input-${name}`).value = value;
-            document.getElementById(`card-${name}`).textContent = (value / 10).toFixed(1);
+
+            // Dynamic color
+            const color = getBarColor(value);
+
+            // Update Number Text (stays white)
+            const cardElement = document.getElementById(`card-${name}`);
+            cardElement.textContent = (value / 10).toFixed(1);
+            cardElement.style.color = 'white';
+
+            // Update Bar Color
             const bar = document.getElementById(`bar-${name}`);
             bar.style.width = value + '%';
-            bar.style.background = getBarColor(value);
+            bar.style.background = color;
+
+            // If updating overall, also update Rank
+            if (name === 'overall') {
+                const rankCard = document.getElementById('card-psl');
+                const rankBar = document.getElementById('bar-psl');
+                rankCard.textContent = getRatingText(value);
+                rankCard.style.color = 'white';
+                rankBar.style.width = value + '%';
+                rankBar.style.background = color;
+            }
             const pct = ((value - slider.min) / (slider.max - slider.min)) * 100;
             slider.style.setProperty('--val', pct + '%');
         }
@@ -519,7 +557,7 @@
                 width: 560,
                 height: 560
             };
-            
+
             // Safari workaround: Render once to pre-warm the canvas engine, then render actual
             await htmlToImage.toCanvas(card, exportOptions).catch(e => console.warn(e));
             const canvas = await htmlToImage.toCanvas(card, exportOptions);
